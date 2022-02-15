@@ -1,6 +1,6 @@
-# san-loader-next
+# san-loader
 
-`san-loader-next` 是一个 webpack loader，允许开发者以书写 `.san` 单文件组件（SFC）的方式来进行组件开发。如下：
+`san-loader` 是一个 webpack loader，允许开发者以书写 `.san` 单文件组件（SFC）的方式来进行组件开发。如下：
 
 ```html
 <template>
@@ -24,7 +24,7 @@
 </style>
 ```
 
-San 单文件在写法上与 Vue 类似，san-loader-next 会将 `template`、`script`、`style` 等标签块当中的内容和属性提取出来，并交给 webpack 分别进行处理。最终单文件对外返回的将是一个普通的 San 组件类，我们可以直接使用它进行 San 组件的各种操作：
+San 单文件在写法上与 Vue 类似，san-loader 会将 `template`、`script`、`style` 等标签块当中的内容和属性提取出来，并交给 webpack 分别进行处理。最终单文件对外返回的将是一个普通的 San 组件类，我们可以直接使用它进行 San 组件的各种操作：
 
 ```js
 import App from './App.san';
@@ -53,13 +53,13 @@ app.attach(document.body);
 ## 使用
 
 ```shell
-npm install --save-dev san-loader-next
+npm install --save-dev san-loader
 ```
 
 ### 基本配置
 
 ```js
-const { SanLoaderPlugin } = require('san-loader-next');
+const { SanLoaderPlugin } = require('san-loader');
 
 module.exports = {
   // ...
@@ -67,7 +67,7 @@ module.exports = {
     rules: [
       {
         test: /\.san$/,
-        loader: 'san-loader-next',
+        loader: 'san-loader',
       },
       // ...
     ],
@@ -79,7 +79,7 @@ module.exports = {
 ### 复杂一些的配置
 
 ```js
-const { SanLoaderPlugin } = require('san-loader-next');
+const { SanLoaderPlugin } = require('san-loader');
 
 module.exports = {
   // ...
@@ -87,7 +87,7 @@ module.exports = {
     rules: [
       {
         test: /\.san$/,
-        loader: 'san-loader-next',
+        loader: 'san-loader',
       },
       {
         test: /\.js$/,
@@ -108,7 +108,7 @@ module.exports = {
 };
 ```
 
-更加完整的 webpack 配置，可以参考[示例](https://github.com/wanwu/san-loader-next/blob/main/examples/)
+更加完整的 webpack 配置，可以参考[示例](https://github.com/wanwu/san-loader/blob/main/examples/)
 
 ## 配置
 
