@@ -24,7 +24,9 @@ export default (
       templateRequest = src + query;
     }
 
-    templateImport = `import template from ${JSON.stringify(templateRequest)};\n`;
+    templateImport = `import template from ${JSON.stringify(
+      templateRequest
+    )};\n`;
   }
 
   return templateImport;

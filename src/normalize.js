@@ -38,7 +38,7 @@ export default function (script, template, injectStyles) {
   }
 
   return typeof script === 'object' ? defineComponent(script) : script;
-};
+}
 
 function injectStylesIntoInitData(proto, injectStyles) {
   var style = {};
