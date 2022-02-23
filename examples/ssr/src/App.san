@@ -1,0 +1,31 @@
+<template>
+    <div id="app" on-click="onClick">
+      <p>Hello {{name}}!</p>
+      <p class="count">Click count: {{ count }}</p>
+    </div>
+</template>
+<script>
+import {Component} from 'san'
+class x extends Component {}
+    export default {
+        initData() {
+            return {
+                name: 'San',
+                count: 0
+            };
+        },
+        onClick() {
+            const count = this.data.get('count')
+            this.data.set('count', count + 1)
+        }
+    };
+</script>
+<style lang="less">
+    @highlight: #f00;
+
+    div {
+        .count {
+            color: @highlight;
+        }
+    }
+</style>
