@@ -28,7 +28,9 @@ export default (
 
       if (style.module) {
         const styleVar = `style${i}`;
-        stylesCode += `\nimport ${styleVar} from ${JSON.stringify(styleRequest)};`;
+        stylesCode += `\nimport ${styleVar} from ${JSON.stringify(
+          styleRequest
+        )};`;
         $style.push(styleVar);
       } else {
         stylesCode += `\nimport ${JSON.stringify(styleRequest)};`;

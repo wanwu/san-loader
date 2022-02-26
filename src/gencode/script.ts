@@ -18,7 +18,9 @@ export default (
     const srcQuery = script.src ? `&src` : ``;
     const query = `?san&type=script${idQuery}${srcQuery}${attrsQuery}`;
     const scriptRequest = JSON.stringify(src + query);
-    scriptImport = `import script from ${scriptRequest};\n` + `export * from ${scriptRequest};`
+    scriptImport =
+      `import script from ${scriptRequest};\n` +
+      `export * from ${scriptRequest};`;
   }
 
   return scriptImport;

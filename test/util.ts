@@ -1,4 +1,4 @@
-module.exports = function (options) {
+export function webpackContext(options) {
   const context = Object.assign(
     { callback, runLoader, resourceQuery: '?' },
     options
@@ -15,4 +15,4 @@ module.exports = function (options) {
     context.code = code;
     context.resourceMap = sourceMap;
   }
-};
+}
